@@ -13,6 +13,7 @@
         IEnumerable<Pie> Cheesecakes();
 
         IEnumerable<Pie> Seasonalpies();*/
-
+       public Pie CreatePie(Pie pie);
+        public Pie Remove(int pieid);
     }
 }

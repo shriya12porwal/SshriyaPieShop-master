@@ -46,6 +46,22 @@ namespace SshriyaPieShop.Models
             return AllPies.Where(pie => pie.CategoryId == 3);
         }*/
 
-      
+        public Pie CreatePie(Pie pie)
+        {
+            var pies =  this.appDbContext.Pies.Add(pie);
+            appDbContext.SaveChanges();
+            return pies.Entity;
+        }
+        public Pie Remove(int pieid)
+        {
+            var pie = this.appDbContext.Pies.FirstOrDefault(pie => pie.PieId == pieid);
+            var entry = this.appDbContext.Pies.Remove(pie);
+            this.appDbContext.SaveChanges();
+            return entry.Entity;
+
+
+        }
+        
+
     }
 }

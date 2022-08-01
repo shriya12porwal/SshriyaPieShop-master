@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Pie>
 <html>
 <head>
 <style>
@@ -51,7 +51,7 @@ border-radius: 45px;
 
           <div class="desc">@pie.ShortDescription</div>
            <div class = button2><a asp-controller="pie" asp-action="AddToCart" asp-route-id="@pie.PieId">AddToCart</a></div>
-           
+          <div> <a  asp-controller="pie" asp-action = "DeletePie"  asp-route-pieId="@pie.PieId"> Delete </a></div>
         </div>
        
       }

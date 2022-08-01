@@ -1,4 +1,6 @@
-﻿namespace SshriyaPieShop.Models
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace SshriyaPieShop.Models
 {
     public class Pie
     {
@@ -15,5 +17,16 @@
         public int CategoryId { get; set; }
         public Category Category { get; set; }
         public bool AllPies { get; internal set; }
+
+    }
+    public class CategoryViewModel : Controller
+    {
+        public IActionResult Index()
+        {
+            Category category = new Category();
+            ViewBag.CategoryID = 1;
+            return View();
+        }
     }
 }
+

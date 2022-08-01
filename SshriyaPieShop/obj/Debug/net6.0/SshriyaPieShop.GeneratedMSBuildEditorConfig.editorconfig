@@ -59,8 +59,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGllXENoZWVzZUNha2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/SHRIYA PORWAL/OneDrive/Desktop/SshriyaPieShop-master/SshriyaPieShop/Views/Pie/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGllXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/SHRIYA PORWAL/OneDrive/Desktop/SshriyaPieShop-master/SshriyaPieShop/Views/Pie/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGllXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SHRIYA PORWAL/OneDrive/Desktop/SshriyaPieShop-master/SshriyaPieShop/Views/Pie/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGllXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/SHRIYA PORWAL/OneDrive/Desktop/SshriyaPieShop-master/SshriyaPieShop/Views/Pie/FruitsPies.cshtml]
@@ -81,6 +89,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/SHRIYA PORWAL/OneDrive/Desktop/SshriyaPieShop-master/SshriyaPieShop/Views/Pie/PiesOfTheWeek.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGllXFBpZXNPZlRoZVdlZWsuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SHRIYA PORWAL/OneDrive/Desktop/SshriyaPieShop-master/SshriyaPieShop/Views/Pie/Remove.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGllXFJlbW92ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/SHRIYA PORWAL/OneDrive/Desktop/SshriyaPieShop-master/SshriyaPieShop/Views/Pie/SeasonalPies.cshtml]

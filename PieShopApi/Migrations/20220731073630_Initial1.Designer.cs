@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PieShopApi.Model;
 
@@ -10,9 +11,10 @@ using PieShopApi.Model;
 namespace PieShopApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220731073630_Initial1")]
+    partial class Initial1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,6 +72,9 @@ namespace PieShopApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PieId"), 1L, 1);
 
+                    b.Property<bool>("AllPies")
+                        .HasColumnType("bit");
+
                     b.Property<string>("AllergyInformation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -116,6 +121,7 @@ namespace PieShopApi.Migrations
                         new
                         {
                             PieId = 1,
+                            AllPies = false,
                             AllergyInformation = "",
                             CategoryId = 1,
                             ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/applepiesmall.jpg",
@@ -130,6 +136,7 @@ namespace PieShopApi.Migrations
                         new
                         {
                             PieId = 2,
+                            AllPies = false,
                             AllergyInformation = "",
                             CategoryId = 2,
                             ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/blueberrycheesecakesmall.jpg",
@@ -144,6 +151,7 @@ namespace PieShopApi.Migrations
                         new
                         {
                             PieId = 3,
+                            AllPies = false,
                             AllergyInformation = "",
                             CategoryId = 2,
                             ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cheesecakesmall.jpg",
@@ -158,6 +166,7 @@ namespace PieShopApi.Migrations
                         new
                         {
                             PieId = 4,
+                            AllPies = false,
                             AllergyInformation = "",
                             CategoryId = 1,
                             ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cherrypiesmall.jpg",
@@ -172,6 +181,7 @@ namespace PieShopApi.Migrations
                         new
                         {
                             PieId = 5,
+                            AllPies = false,
                             AllergyInformation = "",
                             CategoryId = 3,
                             ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/christmasapplepiesmall.jpg",
@@ -186,6 +196,7 @@ namespace PieShopApi.Migrations
                         new
                         {
                             PieId = 6,
+                            AllPies = false,
                             AllergyInformation = "",
                             CategoryId = 3,
                             ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cranberrypiesmall.jpg",
@@ -200,6 +211,7 @@ namespace PieShopApi.Migrations
                         new
                         {
                             PieId = 7,
+                            AllPies = false,
                             AllergyInformation = "",
                             CategoryId = 1,
                             ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/peachpiesmall.jpg",
@@ -214,6 +226,7 @@ namespace PieShopApi.Migrations
                         new
                         {
                             PieId = 8,
+                            AllPies = false,
                             AllergyInformation = "",
                             CategoryId = 3,
                             ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/pumpkinpiesmall.jpg",
@@ -228,6 +241,7 @@ namespace PieShopApi.Migrations
                         new
                         {
                             PieId = 9,
+                            AllPies = false,
                             AllergyInformation = "",
                             CategoryId = 1,
                             ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/rhubarbpiesmall.jpg",
@@ -242,6 +256,7 @@ namespace PieShopApi.Migrations
                         new
                         {
                             PieId = 10,
+                            AllPies = false,
                             AllergyInformation = "",
                             CategoryId = 1,
                             ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberrypiesmall.jpg",
@@ -256,6 +271,7 @@ namespace PieShopApi.Migrations
                         new
                         {
                             PieId = 11,
+                            AllPies = false,
                             AllergyInformation = "",
                             CategoryId = 2,
                             ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberrycheesecakesmall.jpg",
@@ -271,11 +287,13 @@ namespace PieShopApi.Migrations
 
             modelBuilder.Entity("PieShopApi.Model.Pie", b =>
                 {
-                    b.HasOne("PieShopApi.Model.Category", null)
+                    b.HasOne("PieShopApi.Model.Category", "Category")
                         .WithMany("Pies")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("PieShopApi.Model.Category", b =>

@@ -12,8 +12,8 @@ using SshriyaPieShop.Models;
 namespace SshriyaPieShop.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220727123312_Initial")]
-    partial class Initial
+    [Migration("20220801050513_Intial")]
+    partial class Intial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
