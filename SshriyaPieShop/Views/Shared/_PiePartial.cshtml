@@ -1,0 +1,68 @@
+﻿
+<html>
+<head>
+<style>
+div.gallery {
+  margin: 20px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: 100%;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: left;
+}
+.button2 
+    {background-color: lightblue;
+        display: inline-block;
+        
+.container
+{
+position: absolute;
+transform: translate(-50%,-50%);
+top: 50%;
+left: 50%;
+border-radius: 45px;
+}
+</style>
+</head>
+<body>
+   
+    <div>
+
+         @foreach (var pie in Model)
+      {
+        <div class="gallery">
+          <a target="_blank" href= "@pie.ImageThumbnailUrl">
+            <img src="@pie.ImageThumbnailUrl" alt="Cinque Terre" width="600" height="400">
+          </a>
+          <div> <a asp-action="Details" asp-route-id="@pie.PieId">@pie.Name</a></div>
+          <div> Rs: @pie.Price</div>
+
+          <div class="desc">@pie.ShortDescription</div>
+           <div class = button2><a asp-controller="pie" asp-action="AddToCart" asp-route-id="@pie.PieId">AddToCart</a></div>
+           
+        </div>
+       
+      }
+    </div>
+    
+
+
+</body>
+</html>
+@* <div class="counter">
+              <span class="down" onClick='decreaseCount(event, this)'>-</span>
+              <input type="text" value="1">
+              <span class="up"  onClick='increaseCount(event, this)'>+</span>
+            </div>*@

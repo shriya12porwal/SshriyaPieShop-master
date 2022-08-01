@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Category>
+
+ <div class="dropdown">
+    <button class="dropbtn" >Filter</button>
+    <ul class="dropdown-content" aria-labelledby="dropdownMenuLink">
+        @foreach (var category in Model)
+        {
+        <li><a class="dropdown-item" asp-controller="Pie" asp-action="List" asp-route-categoryId = "@category.CategoryId" >@category.CategoryName</a></li>
+            }
+    </ul>
+</div>

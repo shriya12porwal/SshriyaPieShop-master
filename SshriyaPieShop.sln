@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SshriyaPieShop", "SshriyaPieShop\SshriyaPieShop.csproj", "{96731905-4C19-4342-AFF7-87EC5DDD7558}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PieShopApi", "PieShopApi\PieShopApi.csproj", "{2EDA2F82-B8A3-4C2D-94C7-57FCFC96FA90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96731905-4C19-4342-AFF7-87EC5DDD7558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96731905-4C19-4342-AFF7-87EC5DDD7558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96731905-4C19-4342-AFF7-87EC5DDD7558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96731905-4C19-4342-AFF7-87EC5DDD7558}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EDA2F82-B8A3-4C2D-94C7-57FCFC96FA90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EDA2F82-B8A3-4C2D-94C7-57FCFC96FA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EDA2F82-B8A3-4C2D-94C7-57FCFC96FA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EDA2F82-B8A3-4C2D-94C7-57FCFC96FA90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28DCC5E3-19E9-4758-8B4D-AEEF1AFAF5F2}
+	EndGlobalSection
+EndGlobal
