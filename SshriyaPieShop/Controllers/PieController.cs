@@ -12,10 +12,12 @@ namespace SshriyaPieShop.Controllers
     {
         private readonly IPieRepository _pieRepostiory;
         private readonly IMapper mapper;
+        
         private readonly ICategoryRepository categoryRepostiory;
         private readonly IHttpContextAccessor httpContextAccessor;
         private readonly IConfiguration confriguration;
         string baseaddress;
+        
         public PieController(IPieRepository pieRepostior, IMapper mapper, IHttpContextAccessor httpContext, IConfiguration confriguration, ICategoryRepository categoryRepostiory)
         {
             this._pieRepostiory = pieRepostior;
@@ -127,22 +129,6 @@ namespace SshriyaPieShop.Controllers
             return View();
         }
 
-        public async Task<IActionResult> AddtoCart(Pie pie)
-        {
-            IEnumerable<Pie> pies = new List<Pie>();
-            using (var httpClient = new HttpClient())
-            {
-                using (var response = await httpClient.PostAsJsonAsync("https://localhost:7070/Api/Pie/InsertPie", pie))
-                {
-   
-                    return RedirectToAction("AddToCart");
-                }
-            }
-            return RedirectToAction("AddToCart");
-
-            // var pies = _pieRepostiory.CreatePie(pie);
-            //return View(pies);
-        }
 
         public async Task<IActionResult> CreatePie(Pie pie)
         {
@@ -220,6 +206,74 @@ namespace SshriyaPieShop.Controllers
 
 
         }
+        [Authorize]
+        public IActionResult AddToCart(int id)
+        {
+            var pie = _pieRepostiory.AllPies.FirstOrDefault(pie => pie.PieId == id);
+            string cartid = this.httpContextAccessor.HttpContext.User.Identity.Name;
+            
+           var order1 = _pieRepostiory.AllOrders.SingleOrDefault(p => (p.CartId == cartid) && (p.PieId == id));
+            if (order1 == null)
+            {
+                Order order = new Order();
+                
+                order.PieId = pie.PieId;
+                order.PiePrice = pie.Price;
+                order.Quantity = 1;
+                order.PieName = pie.Name;
+                order.CartId = cartid;
+                var result = order;
+                int finalOrder = _pieRepostiory.CreateOrder(result);
+                return RedirectToAction("List");
+
+            }
+            else
+            {
+                Order prevorder = new Order();
+                prevorder = order1;
+                prevorder.Quantity++;
+
+
+                //order1.Quantity++;
+                int finalOrder = this._pieRepostiory.UpdateOrder(prevorder);
+                return RedirectToAction("List");
+            }
+            return View();
+
+
+        }
+        public async Task<ViewResult> Ascending()
+        {
+
+            IEnumerable<Pie> pies = new List<Pie>();
+            // var pie = _pieRepostiory.AllPies;
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("https://localhost:7070/Api/Pie/GetAllPies"))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    pies = JsonConvert.DeserializeObject<IEnumerable<Pie>>(apiResponse);//convert json to student array
+                }
+            }
+            var pie = pies.OrderBy(p => p.Price);
+            return View(pie);
+        }
+        public async Task<ViewResult> Descending()
+        {
+            IEnumerable<Pie> pies = new List<Pie>();
+            // var pie = _pieRepostiory.AllPies;
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("https://localhost:7070/Api/Pie/GetAllPies"))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    pies = JsonConvert.DeserializeObject<IEnumerable<Pie>>(apiResponse);//convert json to student array
+                }
+            }
+            var pie = pies.OrderByDescending(p => p.Price);
+            return View(pie);
+        }
+
     }
   
 }

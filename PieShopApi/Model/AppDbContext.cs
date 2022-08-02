@@ -15,6 +15,7 @@ namespace PieShopApi.Model
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Pie> Pies { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

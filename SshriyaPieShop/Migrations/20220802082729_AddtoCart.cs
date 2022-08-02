@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SshriyaPieShop.Migrations
 {
-    public partial class Intial : Migration
+    public partial class AddtoCart : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -60,6 +60,24 @@ namespace SshriyaPieShop.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categories", x => x.CategoryId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Orders",
+                columns: table => new
+                {
+                    OrderId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PieId = table.Column<int>(type: "int", nullable: false),
+                    PieName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ShortDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CartId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PiePrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Orders", x => x.OrderId);
                 });
 
             migrationBuilder.CreateTable(
@@ -291,6 +309,9 @@ namespace SshriyaPieShop.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Orders");
 
             migrationBuilder.DropTable(
                 name: "Pies");

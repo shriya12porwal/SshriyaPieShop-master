@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Order>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    
+#button-25 {
+  background-color: #36A9AE;
+  background-image: linear-gradient(#37ADB2, #329CA0);
+  border: 1px solid #2A8387;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 1px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: block;
+  font-family: -apple-system,".SFNSDisplay-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 17px;
+  line-height: 100%;
+  margin: 0;
+  outline: 0;
+  padding: 11px 15px 12px;
+  text-align: center;
+  transition: box-shadow .05s ease-in-out,opacity .05s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+.button2 
+    {background-color: lightblue;
+        margin : 20px;
+        padding : 10px;
+        font-size : large;
+
+    }
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1>A Fancy Table</h1>
+
+<table id="customers">
+    <tr>
+        <th>OrderId</th>
+        <th>PieId</th>
+        <th>PieName</th>
+        <th>CartOwner</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Remove</th>
+        
+    </tr>
+     @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.OrderId</td>
+                <td> @order.PieId</td>
+                <td> @order.PieName</td>
+                <td> @order.CartId</td>
+                <td>
+                   <a  asp-controller="order" asp-action = "DecreaseItem"  asp-route-orderid="@order.OrderId"> - </a>
+                    @order.Quantity
+                   <a  asp-controller="order" asp-action = "IncreaseItem"  asp-route-orderid="@order.OrderId"> + </a>
+                </td>
+                <td> @order.PiePrice</td>
+                <td><a  asp-controller="order" asp-action = "RemoveOrder"  asp-route-orderid="@order.OrderId">Remove</a></td>
+            </tr>
+        }
+        
+   
+  
+</table>
+ <div class = button2><a asp-controller="order" asp-action="CustomerForm">Proceed</a></div>
+ <div>Total : Viewbag.Total</div>
+
+
+</body>
+</html>
+

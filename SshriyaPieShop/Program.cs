@@ -24,6 +24,7 @@ builder.Services.AddScoped<IPieRepository, PieRepository>();
 //builder.Services.AddTransient<IPieRepository, PieRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
+
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddHttpContextAccessor();
 

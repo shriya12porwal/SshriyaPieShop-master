@@ -51,8 +51,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SHRIYA PORWAL/OneDrive/Desktop/SshriyaPieShop-master/SshriyaPieShop/Views/Pie/AddToCart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGllXEFkZFRvQ2FydC5jc2h0bWw=
+[C:/Users/SHRIYA PORWAL/OneDrive/Desktop/SshriyaPieShop-master/SshriyaPieShop/Views/Order/CustomerForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ3VzdG9tZXJGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SHRIYA PORWAL/OneDrive/Desktop/SshriyaPieShop-master/SshriyaPieShop/Views/Order/ViewCart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcVmlld0NhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SHRIYA PORWAL/OneDrive/Desktop/SshriyaPieShop-master/SshriyaPieShop/Views/Pie/Ascending.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGllXEFzY2VuZGluZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/SHRIYA PORWAL/OneDrive/Desktop/SshriyaPieShop-master/SshriyaPieShop/Views/Pie/CheeseCakes.cshtml]
@@ -61,6 +69,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/SHRIYA PORWAL/OneDrive/Desktop/SshriyaPieShop-master/SshriyaPieShop/Views/Pie/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGllXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SHRIYA PORWAL/OneDrive/Desktop/SshriyaPieShop-master/SshriyaPieShop/Views/Pie/Descending.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGllXERlc2NlbmRpbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/SHRIYA PORWAL/OneDrive/Desktop/SshriyaPieShop-master/SshriyaPieShop/Views/Pie/Details.cshtml]

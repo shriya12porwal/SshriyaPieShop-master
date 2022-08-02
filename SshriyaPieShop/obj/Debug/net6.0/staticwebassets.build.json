@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "z34bRDbUD31vL7QohOsQ7Mop4+inQdz10oqebB3itqs=",
+  "Hash": "hIyX8EE8S3lepg0GD3CH8MMmVqSNTKFv1EEEggp/Wtc=",
   "Source": "SshriyaPieShop",
   "BasePath": "_content/SshriyaPieShop",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\SHRIYA PORWAL\\OneDrive\\Desktop\\SshriyaPieShop-master\\SshriyaPieShop\\wwwroot\\Image\\cart.png",
+      "SourceId": "SshriyaPieShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SHRIYA PORWAL\\OneDrive\\Desktop\\SshriyaPieShop-master\\SshriyaPieShop\\wwwroot\\",
+      "BasePath": "_content/SshriyaPieShop",
+      "RelativePath": "Image/cart.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Image\\cart.png"
     },
     {
       "Identity": "C:\\Users\\SHRIYA PORWAL\\OneDrive\\Desktop\\SshriyaPieShop-master\\SshriyaPieShop\\wwwroot\\Image\\download.jpg",

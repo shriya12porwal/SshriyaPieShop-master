@@ -1,3 +1,12 @@
+C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.csproj.AssemblyReference.cache
+C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.AssemblyInfoInputs.cache
+C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.AssemblyInfo.cs
+C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.csproj.CoreCompileInputs.cache
+C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.RazorAssemblyInfo.cache
+C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.RazorAssemblyInfo.cs
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\appsettings.json
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\SshriyaPieShop.staticwebassets.runtime.json
@@ -6,6 +15,8 @@ C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\SshriyaPieShop.runtimeconfig.json
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\SshriyaPieShop.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\SshriyaPieShop.pdb
+C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\Humanizer.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\MessagePack.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\MessagePack.Annotations.dll
@@ -48,6 +59,7 @@ C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\Microsoft.VisualStudio.Debugger.Contracts.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -67,6 +79,9 @@ C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\NuGet.ProjectModel.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\NuGet.Protocol.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\NuGet.Versioning.dll
+C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\System.Composition.AttributedModel.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\System.Composition.Convention.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\System.Composition.Hosting.dll
@@ -247,15 +262,6 @@ C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.csproj.AssemblyReference.cache
-C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.AssemblyInfoInputs.cache
-C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.AssemblyInfo.cs
-C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.csproj.CoreCompileInputs.cache
-C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.RazorAssemblyInfo.cache
-C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.RazorAssemblyInfo.cs
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
@@ -267,9 +273,3 @@ C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.pdb
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\SshriyaPieShop.genruntimeconfig.cache
 C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\obj\Debug\net6.0\ref\SshriyaPieShop.dll
-C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\Microsoft.OpenApi.dll
-C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\AutoMapper.dll
-C:\Users\SHRIYA PORWAL\OneDrive\Desktop\SshriyaPieShop-master\SshriyaPieShop\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
