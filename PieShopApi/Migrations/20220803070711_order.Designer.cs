@@ -11,8 +11,8 @@ using PieShopApi.Model;
 namespace PieShopApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220731080942_Initial11")]
-    partial class Initial11
+    [Migration("20220803070711_order")]
+    partial class order
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -64,6 +64,39 @@ namespace PieShopApi.Migrations
                         });
                 });
 
+            modelBuilder.Entity("PieShopApi.Model.Order", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"), 1L, 1);
+
+                    b.Property<int>("Bill")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CartId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PieId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PieName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("PiePrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderId");
+
+                    b.ToTable("Orders");
+                });
+
             modelBuilder.Entity("PieShopApi.Model.Pie", b =>
                 {
                     b.Property<int>("PieId")
@@ -109,8 +142,6 @@ namespace PieShopApi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PieId");
-
-                    b.HasIndex("CategoryId");
 
                     b.ToTable("Pies");
 
@@ -269,20 +300,6 @@ namespace PieShopApi.Migrations
                             Price = 400m,
                             ShortDescription = "You'll love it!"
                         });
-                });
-
-            modelBuilder.Entity("PieShopApi.Model.Pie", b =>
-                {
-                    b.HasOne("PieShopApi.Model.Category", null)
-                        .WithMany("Pies")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PieShopApi.Model.Category", b =>
-                {
-                    b.Navigation("Pies");
                 });
 #pragma warning restore 612, 618
         }

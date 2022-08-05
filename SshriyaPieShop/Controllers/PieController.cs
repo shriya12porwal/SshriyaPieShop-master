@@ -206,10 +206,25 @@ namespace SshriyaPieShop.Controllers
 
 
         }
+
+
+
+
         [Authorize]
-        public IActionResult AddToCart(int id)
+        public async Task<IActionResult> AddToCart(int id)
         {
-            var pie = _pieRepostiory.AllPies.FirstOrDefault(pie => pie.PieId == id);
+            IEnumerable<Pie> pies = new List<Pie>();
+        
+            // var pie = _pieRepostiory.AllPies;
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("https://localhost:7070/Api/Pie/GetAllPies"))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    pies = JsonConvert.DeserializeObject<IEnumerable<Pie>>(apiResponse);//convert json to student array
+                }
+            }
+            var pie = pies.FirstOrDefault(pie => pie.PieId == id);
             string cartid = this.httpContextAccessor.HttpContext.User.Identity.Name;
             
            var order1 = _pieRepostiory.AllOrders.SingleOrDefault(p => (p.CartId == cartid) && (p.PieId == id));
@@ -222,6 +237,7 @@ namespace SshriyaPieShop.Controllers
                 order.Quantity = 1;
                 order.PieName = pie.Name;
                 order.CartId = cartid;
+                order.Bill = (int)(order.Quantity * order.PiePrice);
                 var result = order;
                 int finalOrder = _pieRepostiory.CreateOrder(result);
                 return RedirectToAction("List");
@@ -229,12 +245,11 @@ namespace SshriyaPieShop.Controllers
             }
             else
             {
+
                 Order prevorder = new Order();
                 prevorder = order1;
                 prevorder.Quantity++;
-
-
-                //order1.Quantity++;
+                prevorder.Bill = (int)(prevorder.PiePrice * prevorder.Quantity);
                 int finalOrder = this._pieRepostiory.UpdateOrder(prevorder);
                 return RedirectToAction("List");
             }
@@ -246,8 +261,7 @@ namespace SshriyaPieShop.Controllers
         {
 
             IEnumerable<Pie> pies = new List<Pie>();
-            // var pie = _pieRepostiory.AllPies;
-            using (var httpClient = new HttpClient())
+           using (var httpClient = new HttpClient())
             {
                 using (var response = await httpClient.GetAsync("https://localhost:7070/Api/Pie/GetAllPies"))
                 {
@@ -260,8 +274,8 @@ namespace SshriyaPieShop.Controllers
         }
         public async Task<ViewResult> Descending()
         {
-            IEnumerable<Pie> pies = new List<Pie>();
-            // var pie = _pieRepostiory.AllPies;
+           IEnumerable<Pie> pies = new List<Pie>();
+           
             using (var httpClient = new HttpClient())
             {
                 using (var response = await httpClient.GetAsync("https://localhost:7070/Api/Pie/GetAllPies"))
@@ -270,7 +284,7 @@ namespace SshriyaPieShop.Controllers
                     pies = JsonConvert.DeserializeObject<IEnumerable<Pie>>(apiResponse);//convert json to student array
                 }
             }
-            var pie = pies.OrderByDescending(p => p.Price);
+            var pie =pies.OrderByDescending(p => p.Price);
             return View(pie);
         }
 

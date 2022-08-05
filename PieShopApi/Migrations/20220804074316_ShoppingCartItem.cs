@@ -4,7 +4,7 @@
 
 namespace PieShopApi.Migrations
 {
-    public partial class Initial1 : Migration
+    public partial class ShoppingCartItem : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

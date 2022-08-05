@@ -24,11 +24,12 @@ builder.Services.AddScoped<IPieRepository, PieRepository>();
 //builder.Services.AddTransient<IPieRepository, PieRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
+builder.Services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
-builder.Services.AddHttpContextAccessor();
+builder.Services.AddHttpContextAccessor();//middlewarecomponents,request,response,session,user,caching,service
 
-
+builder.Services.AddSession();
 var app = builder.Build();
 
 
@@ -50,7 +51,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseSession();
 app.UseRouting();
 app.UseAuthentication();;
 

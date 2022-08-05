@@ -49,7 +49,7 @@ namespace PieShopApi.Controllers
 
 
         }
-        [HttpDelete]
+       /* [HttpDelete]
         [Route("DeleteOrder")]
         public IActionResult DeleteOrder(int orderid)
 
@@ -67,7 +67,7 @@ namespace PieShopApi.Controllers
             }
 
 
-        }
+        }*/
         [HttpPut]
         [Route("UpdateOrder")]
         public IActionResult UpdateOrder(Order order)

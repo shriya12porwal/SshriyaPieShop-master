@@ -7,37 +7,36 @@ namespace SshriyaPieShop.Controllers
     public class OrderController : Controller
     {
         private readonly IPieRepository pieRepostiory;
-       
+
         private readonly IHttpContextAccessor httpContextAccessor;
         private readonly AppDbContext appDbContext;
         private readonly IConfiguration confriguration;
-         
-        public OrderController(IPieRepository _pieRepostiory ,IHttpContextAccessor httpContextAccessor, IConfiguration confriguration , AppDbContext appDbContext)
+
+        public OrderController(IPieRepository _pieRepostiory, IHttpContextAccessor httpContextAccessor, IConfiguration confriguration, AppDbContext appDbContext)
         {
             this.pieRepostiory = _pieRepostiory;
-           
+
             this.httpContextAccessor = httpContextAccessor;
             this.confriguration = confriguration;
-            this.appDbContext = appDbContext;   
+            this.appDbContext = appDbContext;
 
         }
-        
+
         public IActionResult ViewCart()
-        
+
         {
             string cartid = this.httpContextAccessor.HttpContext.User.Identity.Name;
             if (cartid == "Shriya@gmail.com")
             {
                 var cart = appDbContext.Orders;
-                
+
                 return View(cart);
 
             }
             else
             {
-                
-                var cart = appDbContext.Orders.FirstOrDefault(o => o.CartId == cartid);
-                
+
+                var cart = appDbContext.Orders.Where(cart => cart.CartId == cartid);
                 return View(cart);
             }
 
@@ -48,6 +47,7 @@ namespace SshriyaPieShop.Controllers
             var order = appDbContext.Orders.FirstOrDefault(o => o.OrderId == orderid);
 
             order.Quantity++;
+            order.Bill = (int)(order.Quantity * order.PiePrice);
             var updateorder = pieRepostiory.UpdateOrder(order);
             return Redirect("ViewCart");
 
@@ -55,13 +55,13 @@ namespace SshriyaPieShop.Controllers
         public IActionResult DecreaseItem(int orderid)
         {
             var order = appDbContext.Orders.FirstOrDefault(o => o.OrderId == orderid);
-            if(order.Quantity>1)
+            if (order.Quantity > 1)
             {
                 order.Quantity--;
-                
+                order.Bill = (int)(order.Quantity * order.PiePrice);
                 var updateorder = pieRepostiory.UpdateOrder(order);
             }
-            
+
 
 
             return Redirect("ViewCart");
@@ -69,12 +69,12 @@ namespace SshriyaPieShop.Controllers
         }
         public IActionResult RemoveOrder(int orderid)
         {
-            var order = appDbContext.Orders.FirstOrDefault(o => o.OrderId ==orderid);
+            var order = appDbContext.Orders.FirstOrDefault(o => o.OrderId == orderid);
             var entity = this.appDbContext.Orders.Remove(order);
             this.appDbContext.SaveChanges();
             return Redirect("ViewCart");
         }
-        
+
         public ViewResult CustomerForm()
         {
             return View();

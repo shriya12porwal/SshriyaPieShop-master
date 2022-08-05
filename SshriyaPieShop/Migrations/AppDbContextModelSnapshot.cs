@@ -273,6 +273,9 @@ namespace SshriyaPieShop.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"), 1L, 1);
 
+                    b.Property<int>("Bill")
+                        .HasColumnType("int");
+
                     b.Property<string>("CartId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -516,6 +519,31 @@ namespace SshriyaPieShop.Migrations
                         });
                 });
 
+            modelBuilder.Entity("SshriyaPieShop.Models.ShoppingCartItem", b =>
+                {
+                    b.Property<int>("ShoppingCartItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ShoppingCartItemId"), 1L, 1);
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PieId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ShoppingCartId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ShoppingCartItemId");
+
+                    b.HasIndex("PieId");
+
+                    b.ToTable("ShoppingCartItems");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -576,6 +604,17 @@ namespace SshriyaPieShop.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("SshriyaPieShop.Models.ShoppingCartItem", b =>
+                {
+                    b.HasOne("SshriyaPieShop.Models.Pie", "Pie")
+                        .WithMany()
+                        .HasForeignKey("PieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pie");
                 });
 
             modelBuilder.Entity("SshriyaPieShop.Models.Category", b =>

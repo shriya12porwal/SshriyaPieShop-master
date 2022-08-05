@@ -6,6 +6,6 @@
         public Order AddOrder(Order order);
         public Order UpdateOrder(Order order);
         
-        public Order DeleteOrder(int orderid);
+        //public Order DeleteOrder(int orderid);
     }
 }

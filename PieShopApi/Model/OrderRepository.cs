@@ -18,13 +18,13 @@
             return entity.Entity;
         }
 
-        public Order DeleteOrder(int  orderid)
+       /* public Order DeleteOrder(int  orderid)
         {
             var order = AllOrders.Where(order => order.Id == orderid).FirstOrDefault();
             var entity = appDbContext.Orders.Remove(order);
             appDbContext.SaveChanges();
             return entity.Entity;
-        }
+        }*/
 
         public Order UpdateOrder(Order order)
         {

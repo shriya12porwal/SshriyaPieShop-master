@@ -11,8 +11,8 @@ using PieShopApi.Model;
 namespace PieShopApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220801171949_Order")]
-    partial class Order
+    [Migration("20220804074316_ShoppingCartItem")]
+    partial class ShoppingCartItem
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -66,31 +66,33 @@ namespace PieShopApi.Migrations
 
             modelBuilder.Entity("PieShopApi.Model.Order", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("OrderId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"), 1L, 1);
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Bill")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("CartId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PieId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("ShortDescription")
+                    b.Property<string>("PieName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<decimal>("PiePrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderId");
 
                     b.ToTable("Orders");
                 });

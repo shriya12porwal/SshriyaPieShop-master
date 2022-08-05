@@ -8,7 +8,9 @@
         public string CartId { get; set; }
         public decimal PiePrice { get; set; }
         public int Quantity { get; set; }
-      
+
+        public int Bill { get; set; }
+
     }
 }
 
