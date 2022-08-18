@@ -6,7 +6,7 @@
 <table class="table table-bordered table-striped">
     <thead>
     <tr>
-        <th>Selected amount</th>
+        
         <th>Pie</th>
         <th>CartOwner</th>
         <th class="text-right">Price</th>
@@ -14,28 +14,15 @@
     </tr>
     </thead>
     <tbody>
-         @{
-        decimal sum = 0;
-    }
+      
     @foreach (var line in Model.ShoppingCart.ShoppingCartItems)
     {
         <tr>
-            
-                    <td class="text-center">
-                        <a  asp-controller= "ShoppingCart" asp-action = "DecreaseItem" asp-route-pieId="@line.Pie.PieId"> - </a>
-                        @line.Amount
-                         <a  asp-controller="ShoppingCart" asp-action = "IncreaseItem" asp-route-pieId="@line.Pie.PieId"> + </a>
-                     </td>
-           
-           
             <td class="text-left">@line.Pie.Name</td>
             <td class="text-left">@line.Username</td>
             <td class="text-right">@line.Pie.Price.ToString("c")</td>
             <td class="text-right">
-                @((line.Amount * line.Pie.Price).ToString("c"))
-                 @{
-                    sum  =  sum + line.Amount * line.Pie.Price;
-                }
+               
             </td>
              <td>  <div>
                 <p class="button">
@@ -49,12 +36,6 @@
     }
     </tbody>
     <tfoot>
-    <tr>
-        <td colspan="3" class="text-right">Total:</td>
-        <td class="text-right">
-            @sum
-        </td>
-          </tr>
     </tfoot>
     
 </table>
@@ -67,12 +48,7 @@
                 </p>
             </div>
 
-                <p class="button">
-                    <a class="btn btn-primary" 
-                       asp-controller="Order"
-                       asp-action = "Checkout">Proceed
-                       </a>
-                </p>
+                
             </div>
 
 

@@ -1,10 +1,5 @@
 ﻿
 
-
-
-@*
-<body>
-   
     <div>
 
          @foreach (var pie in Model)
@@ -16,13 +11,13 @@
           <div> <a asp-action="Details" asp-route-id="@pie.PieId">@pie.Name</a></div>
           <div> Rs: @pie.Price</div>
            <div class = button2><a asp-controller="pie" asp-action="AddToCart" asp-route-id="@pie.PieId">AddToCart</a></div>
-           
+           <div> <p class="button">
+                    <a class="btn btn-danger" 
+                       asp-controller="pie" asp-action = "DeletePie"  asp-route-pieId="@pie.PieId"> Delete
+                       </a>
+             </div>
         </div>
        
       }
     </div>
     
-
-
-</body>
-*@

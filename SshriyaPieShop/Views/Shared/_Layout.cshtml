@@ -31,14 +31,14 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="pie" asp-action="ListMini">ListMini</a>
                         </li>
                        
-                            <div class="dropdown">
+                            <li class="dropdown">
                               <button class="dropbtn">Filter</button>
                               <div class="dropdown-content">
                                <a class="nav-link" asp-controller="pie" asp-action="Ascending">Ascending</a>
                               <a class="nav-link" asp-controller="pie" asp-action="Descending">Descending</a>
                               
                               </div>
-                            </div>
+                            </li>
                        
                         
                         @await Component.InvokeAsync("CategoryMenu")
@@ -51,12 +51,16 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="pie" asp-action="Create">Create</a>
                         </li>
                          <li class="nav-item">
-                            <a asp-controller="order" asp-action="ViewCart"> <p class="lead">
+                            <a asp-controller="shoppingcart" asp-action="Index"> <p class="lead">
                     <img class="img-responsive" alt="Pie Shop" src="~/Image/cart.png" height="40" width="40">
-
+                    
                 </p>  </a>
                         </li>
-                         
+                         <form class="d-flex" asp-controller="Pie" asp-action="FindPie" method="get">
+                         <input class="form-control me-sm-2" type="text" placeholder="Search" name="name">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                      </form>
+
                     </ul>
                 </div>
             </div>
@@ -94,5 +98,3 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-
-

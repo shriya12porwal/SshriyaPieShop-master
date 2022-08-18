@@ -1,13 +1,5 @@
 ﻿@model IEnumerable<Pie>
-<html>
-<head>
-<style>
-
-</style>
-</head>
-
-<body>
-   
+<div>
     <div>
 
          @foreach (var pie in Model)
@@ -16,12 +8,14 @@
           <a target="_blank" href= "@pie.ImageThumbnailUrl">
             <img src="@pie.ImageThumbnailUrl" alt="Cinque Terre" width="600" height="400">
           </a>
+          
           <div> <a asp-action="Details" asp-route-id="@pie.PieId">@pie.Name</a></div>
           <div> Rs: @pie.Price</div>
 
           <div class="desc">@pie.ShortDescription</div>
           @* <div class = button2><a asp-controller="Pie" asp-action="AddToCart" asp-route-id="@pie.PieId">AddToCart</a></div>*@
-           <div class="addToCart">
+          @if(pie.InStock){
+              <div class="addToCart">
                 <p class="button">
                     <a class="btn btn-primary" 
                        asp-controller="ShoppingCart" 
@@ -29,14 +23,34 @@
                        asp-route-pieId="@pie.PieId">Add to cart</a>
                 </p>
             </div>
-
-          <div> <a  asp-controller="pie" asp-action = "DeletePie"  asp-route-pieId="@pie.PieId"> Delete </a></div>
+          }
+         @if(!pie.InStock )
+          {
+              <div class="addToCart">
+                <p class="button">
+                    <a class="btn btn-danger" 
+                       
+                       asp-action="#"
+                       asp-route-pieId="@pie.PieId">Out Of Stock</a>
+                </p>
+            </div>
+          }
+           @*<div class="addToCart">
+                <p class="button">
+                    <a class="btn btn-primary" 
+                       asp-controller="ShoppingCart" 
+                       asp-action="wishlist"
+                       asp-route-pieId="@pie.PieId">Wishlist</a>
+                </p>
+            </div>*@
+           
+                     <div> <p class="button">
+                    <a class="btn btn-danger" 
+                       asp-controller="pie" asp-action = "DeletePie"  asp-route-pieId="@pie.PieId"> Delete
+                       </a>
+             </div>
         </div>
        
       }
     </div>
     
-
-
-</body>
-</html>

@@ -21,7 +21,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IPieRepository, PieRepository>();
 //builder.Services.AddSingleton<IPieRepository, PieRepository>();
-//builder.Services.AddTransient<IPieRepository, PieRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 builder.Services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
@@ -30,6 +30,7 @@ builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddHttpContextAccessor();//middlewarecomponents,request,response,session,user,caching,service
 
 builder.Services.AddSession();
+builder.Services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
 var app = builder.Build();
 
 

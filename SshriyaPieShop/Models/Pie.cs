@@ -19,14 +19,6 @@ namespace SshriyaPieShop.Models
         public bool AllPies { get; internal set; }
 
     }
-    public class CategoryViewModel : Controller
-    {
-        public IActionResult Index()
-        {
-            Category category = new Category();
-            ViewBag.CategoryID = 1;
-            return View();
-        }
-    }
+  
 }
 

@@ -24,16 +24,17 @@ namespace SshriyaPieShop.Controllers
             this.mapper = mapper;
             this.httpContextAccessor = httpContext;
             this.categoryRepostiory = categoryRepostiory;
-            this.baseaddress = confriguration.GetValue<string>("BaseAddress");
+            baseaddress = confriguration.GetValue<string>("BaseAddress");
         }
         public async Task<ViewResult> List(int categoryId )
         {
             /*var user = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Name);
             Console.WriteLine(user);*/
-            IEnumerable<Pie> pies = new List<Pie>();
+            
 
             if (categoryId > 0)
             {
+                IEnumerable<Pie> pies = new List<Pie>();
                 using (var httpClient = new HttpClient())
                 {
                    
@@ -44,20 +45,22 @@ namespace SshriyaPieShop.Controllers
                     }
                 }
                 //pies = _pieRepostiory.AllPies.Where(pie => pie.CategoryId == categoryId);
-
+                return View(pies);
             }
             else
             {
+                IEnumerable<Pie> pies = new List<Pie>();
                 using (var httpClient = new HttpClient())
-                {
-                    using (var response = await httpClient.GetAsync("https://localhost:7070/Api/Pie/GetAllPies"))
-                    {
-                        string apiResponse = await response.Content.ReadAsStringAsync();
-                        pies = JsonConvert.DeserializeObject<IEnumerable<Pie>>(apiResponse);//convert json to student array
-                    }
-                }
+                 {
+                     using (var response = await httpClient.GetAsync("https://localhost:7070/Api/Pie/GetAllPies"))
+                     {
+                         string apiResponse = await response.Content.ReadAsStringAsync();
+                         pies = JsonConvert.DeserializeObject<IEnumerable<Pie>>(apiResponse);//convert json to student array
+                     }
+                 }
+                return View(pies);
             }
-            return View(pies);
+            
         }
 
 
@@ -74,6 +77,7 @@ namespace SshriyaPieShop.Controllers
                 }
             }
             var piemini = mapper.Map<PieMini[]>(pies);
+            Console.WriteLine(piemini);
             return View(piemini);
         }
 
@@ -100,6 +104,7 @@ namespace SshriyaPieShop.Controllers
 
         public async Task<ViewResult> PiesOfTheWeek()
         {
+          
             IEnumerable<Pie> pies = new List<Pie>();
             using (var httpClient = new HttpClient())
             {
@@ -109,6 +114,15 @@ namespace SshriyaPieShop.Controllers
                     pies = JsonConvert.DeserializeObject<IEnumerable<Pie>>(apiResponse);//convert json to student array
                 }
             }
+            return View(pies);
+            //Because return type is task that's why recieve is result 
+
+        }
+        public IActionResult FindPie(string name)
+        {
+            IEnumerable<Pie> pie = new List<Pie>();
+
+            var pies = _pieRepostiory.AllPies.Where(pies => pies.Name.ToUpper().Contains(name.ToUpper()));
             return View(pies);
             //Because return type is task that's why recieve is result 
 
@@ -209,7 +223,7 @@ namespace SshriyaPieShop.Controllers
 
 
 
-
+/*
         [Authorize]
         public async Task<IActionResult> AddToCart(int id)
         {
@@ -256,7 +270,7 @@ namespace SshriyaPieShop.Controllers
             return View();
 
 
-        }
+        }*/
         public async Task<ViewResult> Ascending()
         {
 

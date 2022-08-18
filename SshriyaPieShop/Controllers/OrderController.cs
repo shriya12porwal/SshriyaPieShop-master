@@ -6,7 +6,7 @@ namespace SshriyaPieShop.Controllers
 {
     public class OrderController : Controller
     {
-        private readonly IPieRepository pieRepostiory;
+        /*private readonly IPieRepository pieRepostiory;
 
         private readonly IHttpContextAccessor httpContextAccessor;
         private readonly AppDbContext appDbContext;
@@ -78,6 +78,43 @@ namespace SshriyaPieShop.Controllers
         public ViewResult CustomerForm()
         {
             return View();
+        }*/
+
+
+
+        private readonly IOrderRepository orderRepository;
+        private readonly ShoppingCart cart;
+        public OrderController(IOrderRepository orderRepository, ShoppingCart cart)
+        {
+            this.orderRepository = orderRepository;
+            this.cart = cart;
         }
+        public IActionResult Checkout()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Checkout(Order order1)
+        {
+            var items = cart.GetShoppingCartItems();
+            cart.ShoppingCartItems = items;
+            if (cart.ShoppingCartItems.Count == 0)
+            {
+                ModelState.AddModelError("", "Your cart is empty,add some pie first");
+            }
+            if (ModelState.IsValid)
+            {
+                orderRepository.CreateOrder(order1);
+                cart.ClearCart();
+                return RedirectToAction("CheckoutComplete");
+            }
+            return View(order1);
+        }
+        public IActionResult CheckoutComplete()
+        {
+            ViewBag.CheckoutCompleteMessage = "Thanks for your order.";
+            return View();
+        }
+
     }
 }

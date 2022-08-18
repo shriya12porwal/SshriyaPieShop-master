@@ -33,6 +33,11 @@ namespace SshriyaPieShop.Models
         {
             return AllPies.Where(pies => pies.IsPieOfTheWeek);
         }
+       
+
+
+
+
         /*public IEnumerable<Pie> FruitsPies()
         {
 
@@ -78,8 +83,9 @@ namespace SshriyaPieShop.Models
 
 
         }
+       
 
-        
+
 
     }
 }
